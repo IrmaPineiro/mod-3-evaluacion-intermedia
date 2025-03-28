@@ -1,11 +1,14 @@
 import React from "react";
-import ContryCard from "./CountryCard";
+import CountryCard from "./CountryCard";
 
-function ListCountries() {
+function ListCountries({ countries }) {
   return (
-    <div>
-      <CountryCard />
-    </div>
+    <ul>
+      {countries.map((country) => {
+        //console.log(country); ok.
+        return <CountryCard key={country.name.common} infoCountry={country} />;
+      })}
+    </ul>
   );
 }
 
